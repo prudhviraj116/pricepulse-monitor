@@ -1,0 +1,36 @@
+# Python virtual environments & caches
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/scraper/__pycache__/
+backend/tests/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local database files
+backend/*.db
+backend/*.db-journal
+
+# Node dependencies & production builds
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Local configuration files
+.env
+*.env
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.system_generated/
+
+# OS files
+.DS_Store
+Thumbs.db
