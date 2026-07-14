@@ -72,7 +72,7 @@ const getApiBase = () => {
       ? envUrl.replace(/\/$/, "")
       : `${envUrl.replace(/\/$/, "")}/api`;
   }
-  return "https://pricepulse-monitor.onrender.com/api";
+  return "http://localhost:8000/api";
 };
 
 const API_BASE = getApiBase();
