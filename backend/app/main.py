@@ -160,7 +160,7 @@ def login_as_demo_user(db: Session = Depends(get_db)):
         # Create it if it doesn't exist
         user = models.User(
             email=demo_email,
-            hashed_password=pwd_context.hash("demopassword")
+            hashed_password=get_password_hash("demopassword")
         )
         db.add(user)
         db.commit()

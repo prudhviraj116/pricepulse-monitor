@@ -65,7 +65,18 @@ interface SentAlert {
   sent_at: string;
 }
 
-const API_BASE = import.meta.env.VITE_API_URL || "https://pricepulse-monitor.onrender.com/api";
+const getApiBase = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (envUrl) {
+    return envUrl.endsWith("/api") || envUrl.endsWith("/api/")
+      ? envUrl.replace(/\/$/, "")
+      : `${envUrl.replace(/\/$/, "")}/api`;
+  }
+  return "https://pricepulse-monitor.onrender.com/api";
+};
+
+const API_BASE = getApiBase();
+
 
 export default function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
